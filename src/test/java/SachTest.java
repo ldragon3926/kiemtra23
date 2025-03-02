@@ -40,7 +40,7 @@ public class SachTest {
     public void testUpdate4() {
         Sach sach = new Sach("S1",100000 ,"Book1", "L", 2005);
         sachService.add(sach);
-        Sach sach1 = new Sach("S2",1300000000 ,"Book1", "Anh", 2015);
+        Sach sach1 = new Sach("S2",1300000000 ,"Book1", "Anh", 2005);
         sachService.UpdateSach(sach1);
 
         Assertions.assertEquals(1300000000, sachService.getOne("Book1").getGia());
@@ -64,5 +64,19 @@ public class SachTest {
         Assertions.assertThrows(IllegalArgumentException.class, () ->      sachService.UpdateSach(sach2));
 
     }
+
+    @Test
+    public void testUpdate7() {
+        Sach sach = new Sach("S1",100000 ,"Book1", "L", 2005);
+        sachService.add(sach);
+        Sach sach1 = new Sach("S2",100000 ,"Book2", "A", 2006);
+        sachService.add(sach1);
+        Sach sach2 = new Sach("S3",100000 ,"Book3", "T", 2007);
+        sachService.add(sach2);
+        Sach sach3 = new Sach("S2",130000 ,"Book2", "Anh", 2015);
+        Assertions.assertThrows(IllegalArgumentException.class, () ->      sachService.UpdateSach(sach3));
+
+    }
 }
+
 
