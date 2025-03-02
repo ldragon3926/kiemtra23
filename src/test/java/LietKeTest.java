@@ -17,7 +17,7 @@ public class LietKeTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> lietke.printTu1Den100ex(100));
     }
     @Test
-    public void dtestLK4() {
+    public void testLK4() {
         Assertions.assertEquals("51 52 53 54 56 57 58 59 61 62 63 64 66 67 68 69 71 72 73 74 76 77 78 79 81 82 83 84 86 87 88 89 91 92 93 94 96 97 98 99 ",  lietke.printTu1Den100ex(50));
     }
     @Test
